@@ -1,4 +1,5 @@
 ---
+import { MELSDIARIES_APP_URL } from "@/consts";
 import NavigationBar from "../components/NavigationBar.astro";
 import MainLayout from "../layout/MainLayout.astro";
 import { Upload, Pencil, Book, ArrowRight } from "@lucide/astro";
@@ -12,7 +13,7 @@ import { Upload, Pencil, Book, ArrowRight } from "@lucide/astro";
       class="mt-6 relative isolate overflow-hidden rounded-[2.5rem] bg-gray-900 shadow-2xl"
     >
       <img
-        src="https://images.unsplash.com/photo-1544377193-33dcf4d68fb5?q=80&w=2000&auto=format&fit=crop"
+        src="https://plus.unsplash.com/premium_photo-1661375269586-b246bbd08fc8?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         alt="Photo book background"
         class="absolute inset-0 -z-10 h-full w-full object-cover opacity-60"
       />
@@ -35,6 +36,7 @@ import { Upload, Pencil, Book, ArrowRight } from "@lucide/astro";
         </p>
         <div class="mt-10 flex items-center justify-center gap-x-6">
           <button
+            onclick={`window.location.href='${MELSDIARIES_APP_URL}'`}
             class="group bg-orange-500 text-white px-8 py-3.5 rounded-full hover:bg-orange-600 transition-all duration-300 font-semibold shadow-lg hover:shadow-orange-500/30 flex items-center gap-2"
           >
             Create Your Book
