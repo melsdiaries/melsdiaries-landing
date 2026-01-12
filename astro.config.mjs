@@ -9,6 +9,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-
+  site: "https://melsdiaries.com",
   integrations: [react()],
 });

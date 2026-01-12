@@ -1,15 +1,44 @@
 ---
 import "../styles/global.css";
 import { ClientRouter } from "astro:transitions";
+import metaImage from "/melsdiaries-meta-image.jpg";
+
+// Construct the full URL for the image
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const socialImageURL = new URL(metaImage, Astro.site);
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>melsdiaries</title>
+
+    <title>Melsdiaries</title>
+    <meta name="title" content="Melsdiaries" />
+    <meta
+      name="description"
+      content="Your memories deserve more than a cloud. Get a professionally printed hardcopy photobook now."
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content="Melsdiaries" />
+    <meta
+      property="og:description"
+      content="Your memories deserve more than a cloud. Get a professionally printed hardcopy photobook now."
+    />
+    <meta property="og:image" content={socialImageURL} />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content="Melsdiaries" />
+    <meta
+      property="twitter:description"
+      content="Your memories deserve more than a cloud. Get a professionally printed hardcopy photobook now."
+    />
+    <meta property="twitter:image" content={socialImageURL} />
+
     <ClientRouter />
   </head>
   <body class="bg-orange-50">
