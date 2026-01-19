@@ -1,0 +1,32 @@
+---
+const features = [
+  { title: "Lasts Forever", desc: "Premium archival paper that never fades." },
+  { title: "Personalized", desc: "Every book is custom-made for your story." },
+  { title: "Fast Delivery", desc: "Hand-crafted and shipped within 48 hours." },
+  { title: "Global Shipping", desc: "Available for delivery worldwide." },
+];
+---
+
+<section class="py-24 bg-brand-cream">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl font-serif text-center mb-16">
+      Why a Meldiaries Book?
+    </h2>
+
+    <div class="grid grid-cols-2 gap-12 text-center">
+      {
+        features.map((feature) => (
+          <div class="flex flex-col items-center  w-full ">
+            <div class="w-14 h-14 bg-brand-orange rounded-full mb-6 flex items-center justify-center shadow-lg shadow-brand-orange/10">
+              <div class="w-6 h-6 border-2 border-white rounded-full" />
+            </div>
+            <h3 class="font-bold text-lg mb-2">{feature.title}</h3>
+            <p class="text-sm text-brand-dark/60 leading-relaxed w-full">
+              {feature.desc}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

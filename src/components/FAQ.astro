@@ -1,0 +1,33 @@
+---
+const faqs = [
+  {
+    q: "How many photos can I add?",
+    a: "You can add up to 200 photos per book.",
+  },
+  {
+    q: "What is the quality of the paper?",
+    a: "We use 200gsm archival grade matte paper.",
+  },
+  {
+    q: "How long does shipping take?",
+    a: "Standard shipping takes 5-7 business days.",
+  },
+];
+---
+
+<section class="max-w-3xl mx-auto py-24 px-6">
+  <h2 class="text-3xl font-serif text-center mb-12">Your Questions Answered</h2>
+  <div class="divide-y divide-brand-beige">
+    {
+      faqs.map((faq) => (
+        <details class="group py-4 cursor-pointer">
+          <summary class="flex justify-between items-center list-none font-medium">
+            {faq.q}
+            <span class="transition group-open:rotate-180">↓</span>
+          </summary>
+          <p class="mt-4 text-brand-dark/70 leading-relaxed">{faq.a}</p>
+        </details>
+      ))
+    }
+  </div>
+</section>
