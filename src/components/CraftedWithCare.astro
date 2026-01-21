@@ -18,13 +18,17 @@ const steps = [
 ];
 ---
 
-<section class="py-24 bg-white">
+<section class="py-16 bg-white">
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center mb-16">
       <div
-        class="inline-block bg-brand-orange text-white text-sm font-bold px-4 py-2 rounded-full mb-6"
+        class="inline-block border-dashed border border-brand-orange w-fit h-fit mb-6 p-1 rounded-full"
       >
-        Our Process
+        <div
+          class="bg-brand-orange text-white text-sm font-bold px-4 py-2 rounded-full"
+        >
+          How it works
+        </div>
       </div>
       <h2 class="text-4xl md:text-5xl font-serif leading-tight">
         Crafted with Care, As Unique as Your Story
@@ -36,8 +40,10 @@ const steps = [
         steps.map((step, index) => (
           <div class="bg-brand-beige rounded-2xl p-8 text-center">
             <div class="text-5xl mb-6">{step.icon}</div>
-            <div class="inline-block bg-brand-orange text-white text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center mb-4">
-              {index + 1}
+            <div class="inline-block bg-brand-orange text-white text-xs font-bold w-8 h-8 rounded-full items-center justify-center mb-4">
+              <p class="flex items-center justify-center w-full h-full">
+                {index + 1}
+              </p>
             </div>
             <h3 class="text-xl font-bold mb-4">{step.title}</h3>
             <p class="text-brand-dark/60 leading-relaxed">{step.desc}</p>

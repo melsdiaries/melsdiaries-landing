@@ -1,11 +1,42 @@
 ---
 import { ArrowRight } from "lucide-react";
+
+// Import all hero images
+const heroImages = [
+  "/hero-images/2.png",
+  "/hero-images/3.png",
+  "/hero-images/4.png",
+  "/hero-images/5.png",
+  "/hero-images/6.png",
+  "/hero-images/7.png",
+  "/hero-images/8.png",
+  "/hero-images/9.png",
+  "/hero-images/10.png",
+  "/hero-images/11.png",
+  "/hero-images/12.png",
+  "/hero-images/13.png",
+];
 ---
 
-<section class="pt-6 pb-20 overflow-hidden">
+<style>
+  @keyframes marquee-ltr {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .group:hover .marquee-track {
+    animation: marquee-ltr 5s linear infinite;
+  }
+</style>
+
+<section class="pt-6 pb-10 overflow-hidden">
   <nav class="max-w-7xl mx-auto px-6 flex justify-between items-center mb-16">
     <div class="text-2xl font-bold text-brand-orange">
-      <img src="/melsdiaries-logo.png" alt="" class="w-12" />
+      <img src="/melsdiaries-logo.png" alt="" class="w-18" />
     </div>
     <div class="hidden md:flex gap-8 text-sm font-medium items-center">
       <a href="#">Use Case</a><a href="#">Pricing</a><a href="#">FAQs</a>
@@ -19,24 +50,24 @@ import { ArrowRight } from "lucide-react";
   <div class="text-center max-w-4xl mx-auto px-6">
     <h1 class="text-5xl md:text-7xl font-serif leading-tight mb-12">
       Your <span class="text-brand-orange italic">Memories</span>, Deserve <br
-      /> More Than a Cloud
+      /> More Than a Cloud.
     </h1>
   </div>
 
-  <div class="flex justify-center gap-4 px-4 overflow-visible">
-    {
-      [1, 2, 3, 4, 5].map((i) => (
-        <div
-          class={`w-48 h-64 shrink-0 rounded-2xl bg-brand-beige shadow-xl overflow-hidden transform ${i % 2 === 0 ? "translate-y-8 rotate-3" : "-rotate-2"}`}
-        >
-          <img
-            src={`/api/placeholder/400/600`}
-            alt="Memory"
-            class="w-full h-full object-cover"
-          />
-        </div>
-      ))
-    }
+  <div class="group overflow-hidden">
+    <div class="marquee-track flex justify-center px-4 gap-2">
+      {
+        [...heroImages, ...heroImages].map((imageSrc, i) => (
+          <div class="w-52 h-64 shrink-0 overflow-hidden">
+            <img
+              src={imageSrc}
+              alt="Memory"
+              class="w-full h-full object-covera"
+            />
+          </div>
+        ))
+      }
+    </div>
   </div>
 </section>
 <div class="text-center">
@@ -45,7 +76,7 @@ import { ArrowRight } from "lucide-react";
 
   <div class="w-full flex items-center justify-center mt-10">
     <button
-      class="gap-4 flex items-center justify-center px-4 py-2 rounded-full bg-orange-400 text-white"
+      class="flex gap-4 justify-between bg-brand-orange text-white px-6 py-3 rounded-md font-bold transition-transform hover:scale-105"
     >
       Start your book <ArrowRight /></button
     >

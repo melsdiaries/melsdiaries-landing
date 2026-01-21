@@ -1,19 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
-import PanelsFade from "../components/PanelsFade.astro";
 import GallerySection from "../components/GallerySection.astro";
 import CraftedWithCare from "../components/CraftedWithCare.astro";
 import Testimonial from "../components/Testimonial.astro";
 import Features from "../components/Features.astro";
 import FAQ from "../components/FAQ.astro";
 import Footer from "../components/Footer.astro";
+import PixelsFade from "@/components/PixelsFade.astro";
 ---
 
 <Layout title="Melsdiaries">
   <main>
     <Hero />
-    <PanelsFade />
+    <PixelsFade />
     <GallerySection />
     <CraftedWithCare />
     <Testimonial />
@@ -23,8 +23,10 @@ import Footer from "../components/Footer.astro";
         Don't just Store Memories. Honor Them.
       </h2>
       <p class="text-brand-dark/70 max-w-2xl mx-auto mb-12 leading-relaxed">
-        Turn your digital photos into a timeless keepsake that your family will
-        treasure for generations. Start creating your story today.
+        One day, you'll be sitting on the couch. You'll pull this book from the
+        shelf. You'll run your fingers over its cover, flip through its pages,
+        and you'll be transported. You'll feel the laughter, the warmth, the
+        love, all over again.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <button
