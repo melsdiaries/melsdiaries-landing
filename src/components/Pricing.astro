@@ -1,0 +1,122 @@
+---
+const pricingTiers = [
+  {
+    pages: 20,
+    price: 15,
+    priceGBP: 12,
+    priceEUR: 14,
+    popular: false,
+    description: "Perfect for a small collection of special moments",
+  },
+  {
+    pages: 50,
+    price: 37.5,
+    priceGBP: 30,
+    priceEUR: 35,
+    popular: true,
+    description: "Our most popular choice for capturing your story",
+  },
+  {
+    pages: 100,
+    price: 75,
+    priceGBP: 60,
+    priceEUR: 70,
+    popular: false,
+    description: "For the comprehensive family chronicle",
+  },
+  {
+    pages: 150,
+    price: 112.5,
+    priceGBP: 90,
+    priceEUR: 105,
+    popular: false,
+    description: "The ultimate legacy keepsake",
+  },
+];
+
+import { MELSDIARIES_APP_URL } from "../consts";
+---
+
+<section id="pricing" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-serif leading-tight mb-6">
+        Simple, Transparent Pricing
+      </h2>
+      <p class="text-brand-dark/70 max-w-2xl mx-auto leading-relaxed">
+        Just <span class="font-bold text-brand-orange">$0.75 per page</span>. No
+        hidden fees, no surprises. Choose the size that fits your story.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+      {
+        pricingTiers.map((tier) => (
+          <div
+            class={`relative rounded-2xl border-2 p-8 transition-all hover:shadow-xl ${
+              tier.popular
+                ? "border-brand-orange bg-brand-orange/5 shadow-lg"
+                : "border-brand-beige hover:border-brand-orange/50"
+            }`}
+          >
+            {tier.popular && (
+              <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                <span class="bg-brand-orange text-white text-xs font-bold px-4 py-1.5 rounded-full">
+                  Most Popular
+                </span>
+              </div>
+            )}
+
+            <div class="text-center">
+              <div class="text-5xl font-bold text-brand-dark mb-2">
+                {tier.pages}
+              </div>
+              <div class="text-sm text-brand-dark/60 mb-6">pages</div>
+
+              <div class="mb-6">
+                <div class="text-3xl font-bold text-brand-orange mb-1">
+                  ${tier.price}
+                </div>
+                <div class="text-xs text-brand-dark/60 space-y-0.5">
+                  <div>
+                    £{tier.priceGBP} · €{tier.priceEUR}
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-sm text-brand-dark/70 mb-6 min-h-[3rem]">
+                {tier.description}
+              </p>
+
+              <a
+                href={MELSDIARIES_APP_URL}
+                class={`block w-full py-3 rounded-md font-bold transition-all ${
+                  tier.popular
+                    ? "bg-brand-orange text-white hover:bg-orange-600"
+                    : "border-2 border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white"
+                }`}
+              >
+                Get Started
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="text-center">
+      <p class="text-sm text-brand-dark/60 mb-4">
+        All books include premium-quality paper and professional binding
+      </p>
+      <p class="text-xs text-brand-dark/50">
+        Need a custom size? <a
+          href={MELSDIARIES_APP_URL}
+          class="text-brand-orange hover:underline font-medium">Contact us</a
+        > for a personalized quote.
+      </p>
+      <p class="text-xs text-muted-foreground mt-2">
+        *Shipping costs not included in the above prices.
+      </p>
+    </div>
+  </div>
+</section>

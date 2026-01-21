@@ -5,6 +5,7 @@ import GallerySection from "../components/GallerySection.astro";
 import CraftedWithCare from "../components/CraftedWithCare.astro";
 import Testimonial from "../components/Testimonial.astro";
 import Features from "../components/Features.astro";
+import Pricing from "../components/Pricing.astro";
 import FAQ from "../components/FAQ.astro";
 import Footer from "../components/Footer.astro";
 import PixelsFade from "@/components/PixelsFade.astro";
@@ -19,7 +20,7 @@ import { MELSDIARIES_APP_URL } from "../consts";
     <CraftedWithCare />
     <Testimonial />
     <Features />
-    <section id="pricing" class="py-24 bg-brand-cream text-center">
+    <section class="py-24 bg-brand-cream text-center">
       <h2 class="text-4xl md:text-5xl font-serif mb-8 italic">
         Don't just Store Memories. Honor Them.
       </h2>
@@ -45,6 +46,7 @@ import { MELSDIARIES_APP_URL } from "../consts";
         >
       </div>
     </section>
+    <Pricing />
     <FAQ />
     <Footer />
   </main>
