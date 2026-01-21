@@ -1,27 +1,39 @@
 ---
 const faqs = [
   {
-    q: "How many photos can I add?",
-    a: "You can add up to 200 photos per book.",
+    q: "What exactly is an Melsdiaries book?",
+    a: "A Melsdiaries book is a premium, custom-designed photo book that transforms your digital memories into a beautiful, tangible keepsake. It's crafted with heirloom-quality materials designed to last for generations.",
   },
   {
-    q: "What is the quality of the paper?",
-    a: "We use 200gsm archival grade matte paper.",
+    q: "I have thousands of photos. Where do I even start?",
+    a: "We make it easy! Our intuitive platform helps you organize and curate your photos effortlessly. You can select your favorites, and our design tools guide you through creating a beautiful layout without any hassle.",
   },
   {
-    q: "How long does shipping take?",
-    a: "Standard shipping takes 5-7 business days.",
+    q: "How difficult is the design process? Do I need to be tech-savvy?",
+    a: "The final cost depends on the size, number of pages, and cover materials you choose. You can start designing for free and only pay when you're ready to order your masterpiece. We offer a range of options to suit different budgets, always with our signature quality.",
+  },
+  {
+    q: "What if I make a mistake or want to change something after I order?",
+    a: "No worries! Before we print, you'll receive a final proof to review. If you need to make changes after ordering but before printing, just reach out to our support team and we'll help you update your design.",
+  },
+  {
+    q: "How much does an Melsdiaries book cost?",
+    a: "Pricing varies based on your choices of size, page count, and cover materials. We offer flexible options to fit different budgets while maintaining our commitment to premium quality. You can see the exact price as you customize your book.",
+  },
+  {
+    q: "How long does it take to receive my book?",
+    a: "Once you finalize your design and place your order, production typically takes 5-7 business days. Shipping time depends on your location, but we offer various shipping options to get your book to you as quickly as possible.",
   },
 ];
 ---
 
-<section class="max-w-3xl mx-auto py-24 px-6">
+<section id="faq" class="max-w-5xl mx-auto py-24 px-0">
   <h2 class="text-3xl font-serif text-center mb-12">Your Questions Answered</h2>
   <div class="divide-y divide-brand-beige">
     {
       faqs.map((faq) => (
         <details class="group py-4 cursor-pointer">
-          <summary class="flex justify-between items-center list-none font-medium">
+          <summary class="flex justify-between items-center list-none font-semibold">
             {faq.q}
             <span class="transition group-open:rotate-180">↓</span>
           </summary>

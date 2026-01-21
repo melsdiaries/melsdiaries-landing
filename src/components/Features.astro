@@ -1,25 +1,32 @@
 ---
+import { Award, Sparkles, Heart, Gift } from "lucide-react";
+
 const features = [
   {
+    icon: Award,
     title: "Heirloom Quality",
     desc: "Premium materials designed to be passed down.",
   },
+
   {
+    icon: Sparkles,
     title: "Effortless Creation",
     desc: "We make the process joyful, not daunting.",
   },
   {
+    icon: Heart,
     title: "100% your story",
     desc: "Flexible designs that adapt to you, not the other way around.",
   },
   {
+    icon: Gift,
     title: "The Ultimate Gift",
     desc: "A gift of meaning, for weddings, anniversaries, or just because.",
   },
 ];
 ---
 
-<section class="py-24 bg-brand-cream">
+<section id="features" class="py-24">
   <div class="max-w-7xl mx-auto px-6">
     <h2 class="text-3xl font-serif text-center mb-16">
       Why a Melsdiaries Book?
@@ -27,17 +34,20 @@ const features = [
 
     <div class="grid grid-cols-2 gap-12 text-center">
       {
-        features.map((feature) => (
-          <div class="flex flex-col items-center  w-full ">
-            <div class="w-14 h-14 bg-brand-orange rounded-full mb-6 flex items-center justify-center shadow-lg shadow-brand-orange/10">
-              <div class="w-6 h-6 border-2 border-white rounded-full" />
+        features.map((feature) => {
+          const IconComponent = feature.icon;
+          return (
+            <div class="flex flex-col items-center  w-full ">
+              <div class="w-14 h-14 bg-brand-orange rounded-full mb-6 flex items-center justify-center shadow-lg shadow-brand-orange/10">
+                <IconComponent className="w-6 h-6 text-white" />
+              </div>
+              <h3 class="font-bold text-lg mb-2">{feature.title}</h3>
+              <p class="text-sm text-brand-dark/60 leading-relaxed w-full">
+                {feature.desc}
+              </p>
             </div>
-            <h3 class="font-bold text-lg mb-2">{feature.title}</h3>
-            <p class="text-sm text-brand-dark/60 leading-relaxed w-full">
-              {feature.desc}
-            </p>
-          </div>
-        ))
+          );
+        })
       }
     </div>
   </div>

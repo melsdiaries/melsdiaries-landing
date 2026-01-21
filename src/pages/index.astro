@@ -8,6 +8,7 @@ import Features from "../components/Features.astro";
 import FAQ from "../components/FAQ.astro";
 import Footer from "../components/Footer.astro";
 import PixelsFade from "@/components/PixelsFade.astro";
+import { MELSDIARIES_APP_URL } from "../consts";
 ---
 
 <Layout title="Melsdiaries">
@@ -18,24 +19,29 @@ import PixelsFade from "@/components/PixelsFade.astro";
     <CraftedWithCare />
     <Testimonial />
     <Features />
-    <section class="py-24 bg-brand-cream text-center">
+    <section id="pricing" class="py-24 bg-brand-cream text-center">
       <h2 class="text-4xl md:text-5xl font-serif mb-8 italic">
         Don't just Store Memories. Honor Them.
       </h2>
-      <p class="text-brand-dark/70 max-w-2xl mx-auto mb-12 leading-relaxed">
+      <p class="text-brand-dark/70 max-w-2xl mx-auto leading-relaxed">
         One day, you'll be sitting on the couch. You'll pull this book from the
         shelf. You'll run your fingers over its cover, flip through its pages,
         and you'll be transported. You'll feel the laughter, the warmth, the
         love, all over again.
       </p>
+      <p class="text-muted-foreground text-2xl font-serif italic my-8 mb-12">
+        That day starts today...
+      </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <button
-          class="bg-brand-orange text-white px-8 py-3 rounded-md font-bold transition-transform hover:scale-105"
-          >Begin your story today</button
+        <a
+          href={MELSDIARIES_APP_URL}
+          class="inline-block bg-brand-orange text-white px-8 py-3 rounded-md font-bold transition-transform hover:scale-105"
+          >Begin your story today</a
         >
-        <button
-          class="border-2 border-brand-orange text-brand-orange px-8 py-3 rounded-md font-bold transition-all hover:bg-brand-orange hover:text-white"
-          >View photobooks</button
+        <a
+          href="#gallery"
+          class="inline-block border-2 border-brand-orange text-brand-orange px-8 py-3 rounded-md font-bold transition-all hover:bg-brand-orange hover:text-white"
+          >View photobooks</a
         >
       </div>
     </section>

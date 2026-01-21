@@ -1,55 +1,69 @@
 ---
-const steps = [
+const cards = [
   {
-    title: "Choose Book",
-    desc: "Select from our range of premium photobook sizes and styles that best fit your story.",
-    icon: "📖",
+    title: "Gather & Guide",
+    description:
+      "Simply upload your photos. Our intuitive platform helps you organize by date, event, or feeling. Feeling stuck? We provide gentle prompts to surface your best moments.",
   },
   {
-    title: "Upload & Personalize",
-    desc: "Upload your photos and customize layouts, add captions, and make it uniquely yours.",
-    icon: "✨",
+    title: "Design & Delight",
+    description:
+      "Choose from elegant, story-driven templates. Effortlessly drag, drop, and arrange. Add captions, quotes, or short anecdotes. This is where your story finds its voice.",
   },
   {
-    title: "Delivered to Doorstep",
-    desc: "We print and hand-craft your book with care, then ship it directly to you within 48 hours.",
-    icon: "📦",
+    title: "Treasure & Transcend",
+    description:
+      "Receive your masterpiece—a premium, archival-quality book printed on lush paper, bound to last a lifetime. The moment you hold it, you'll understand. This is your legacy, in your hands.",
   },
 ];
 ---
 
-<section class="py-16 bg-white">
+<section id="use-case" class="py-16 bg-white">
   <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-16">
+    <!-- Header -->
+    <div class="text-center mb-12">
       <div
-        class="inline-block border-dashed border border-brand-orange w-fit h-fit mb-6 p-1 rounded-full"
+        class="inline-block border-dashed border-2 border-brand-orange w-fit h-fit mb-6 p-1 rounded-full"
       >
         <div
-          class="bg-brand-orange text-white text-sm font-bold px-4 py-2 rounded-full"
+          class="bg-brand-orange text-white text-sm font-bold px-6 py-2 rounded-full"
         >
           How it works
         </div>
       </div>
       <h2 class="text-4xl md:text-5xl font-serif leading-tight">
-        Crafted with Care, As Unique as Your Story
+        Crafted with Care, As Unique as Your Story.
       </h2>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-8">
-      {
-        steps.map((step, index) => (
-          <div class="bg-brand-beige rounded-2xl p-8 text-center">
-            <div class="text-5xl mb-6">{step.icon}</div>
-            <div class="inline-block bg-brand-orange text-white text-xs font-bold w-8 h-8 rounded-full items-center justify-center mb-4">
-              <p class="flex items-center justify-center w-full h-full">
-                {index + 1}
+    <!-- Hero Image with Overlapping Cards -->
+    <div class="relative max-w-5xl mx-auto">
+      <!-- Hero Image -->
+      <div class="rounded-3xl overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1522881193457-37ae97c905bf?w=1200&h=700&fit=crop"
+          alt="Hands holding an open photobook"
+          class="w-full h-[500px] md:h-[600px] object-cover"
+        />
+      </div>
+
+      <!-- Overlapping Cards - Positioned on top of image -->
+      <div
+        class="absolute bottom-0 left-0 right-0 z-10 grid md:grid-cols-3 gap-4 md:gap-6 px-4 md:px-8 pb-8"
+      >
+        {
+          cards.map((card) => (
+            <div class="bg-white rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+              <h3 class="text-lg md:text-xl font-bold mb-3 text-foreground font-serif">
+                {card.title}
+              </h3>
+              <p class="text-muted-foreground leading-relaxed text-xs md:text-sm">
+                {card.description}
               </p>
             </div>
-            <h3 class="text-xl font-bold mb-4">{step.title}</h3>
-            <p class="text-brand-dark/60 leading-relaxed">{step.desc}</p>
-          </div>
-        ))
-      }
+          ))
+        }
+      </div>
     </div>
   </div>
 </section>
